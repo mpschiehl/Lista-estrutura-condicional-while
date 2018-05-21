@@ -3,10 +3,11 @@ import javax.swing.JOptionPane;
 public class ExercicioEstruturaWhile6{
     public static void main(String[] args){
        String pedido = " ";
-        int registro = 1;
+        int registro = 1,bolos = 0, doces =0,sanduiche = 0, pizzas = 0, registroaux = 0;
+        double total = 0;
 
         while(registro !=0){
-
+            registroaux = registroaux + 1;
         pedido = JOptionPane.showInputDialog(null,
         "Tipo        Nome                                       Valor "
         +"\nBolos   Bolo Brigadeiro                     R$ 29,50"
@@ -32,21 +33,52 @@ public class ExercicioEstruturaWhile6{
         if(pedido.equals("Sair")){
             registro = 0;
         }else if(pedido.equals("Bolo Brigadeiro")){
+            bolos = bolos +1;
+            total = total +29.5; 
         }else if(pedido.equals("Bolo Floresta Negra")){
+            bolos = bolos +1;
+            total = total +2;
         }else if(pedido.equals("Bolo Leite com Nutella")){
+            bolos = bolos +1;
+            total = total +29.23;
         }else if (pedido.equals("Bolo Mousse de Chocolate")){ 
+            bolos = bolos +1;
+            total = total +7.10;
         }else if (pedido.equals("Bolo Nega Maluca")){
+            bolos = bolos +1;
+            total = total +19.33;
         }else if(pedido.equals("Bomba de Creme")){
+            doces = doces +1;
+            total = total +17.71;
         }else if(pedido.equals("Bomba de Morango")){
+            doces = doces +1;
+            total = total +4.82;
         }else if(pedido.equals("Sanduíche Filé-Mignon fritas e cheddar")){
+            sanduiche = sanduiche + 1;
+            total = total + 21.16;
         }else if(pedido.equals("Sanduíche Hambúrguer queijos,champignon e rúcula")){
-        }else if(pedido.equals("Sanduíche Provolone e salame")){        
+            sanduiche = sanduiche + 1;
+            total = total +12.7;
+        }else if(pedido.equals("Sanduíche Provolone e salame")){        sanduiche = sanduiche + 1;
+            total = total +19.7;
         }else if (pedido.equals("Sanduíche Vegetariano berinjela")){
+            sanduiche = sanduiche + 1;
+            total = total + 28.22;
         }else if(pedido.equals("Pizza Calabresa")){
+            pizzas = pizzas + 1;
+            total = total + 8.98;
         }else if(pedido.equals("Pizzas Napolitana")){
+            pizzas = pizzas + 1;
+            total = total + 0.42;
         }else if(pedido.equals("Pizzas Peruana")){
+            pizzas = pizzas + 1;
+            total = total + 18.36;
         }else if (pedido.equals("Pizzas Portuguesa")){
+            pizzas = pizzas + 1;
+            total = total + 27.5;
         }
         }
+        double media = total/registroaux;
+        JOptionPane.showMessageDialog(null,"Quantidade de Bolos solicitados " + bolos +"\nQuatidade de Doces escolidos " + doces + "\nQuantidade de Sanduiches " + sandui­che + "\nQuantidade de Pizzas Escolhidas " + pizzas + "\nA Media dos produtos " + media,"Padaria do João",JOptionPane.INFORMATION_MESSAGE);
     }
 }
